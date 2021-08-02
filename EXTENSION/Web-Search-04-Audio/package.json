@@ -1,0 +1,79 @@
+{
+	"name": "Web-Search-04-Audio",
+	"displayName": "Web Search (Audio)",
+	"description": "Find In Browser",
+	"version": "1.0.5",
+	"publisher": "CriticalSoft",
+	"engines": {
+		"vscode": "^1.31.0"
+	},
+	"author": {
+		"name": "Critical Soft",
+		"url": "https://www.github.com/criticalsoft"
+	},
+	"icon": "resources/icon.png",
+	"homepage": "https://www.github.com/criticalsoft",
+	"repository": {
+		"type": "git",
+		"url": "https://www.github.com/criticalsoft"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"*"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"menus": {
+			"editor/context": [
+				{
+					"when": "editorHasSelection",
+					"command": "extension.WebSearchAudio",
+					"group": "web@04"
+				}
+			]
+		},
+		"commands": [
+			{
+				"command": "extension.WebSearchAudio",
+				"title": "Audio"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "extension.WebSearchAudio",
+				"key": "ctrl+alt+f a",
+				"when": "editorHasSelection"
+			}
+		],
+		"configuration": {
+			"title": "Config",
+			"type": "object",
+			"properties": {
+				"WebSearchAudio.QueryTemplate": {
+					"type": "string",
+					"default": "https://www.findsounds.com/ISAPI/search.dll?keywords=%STRING%",
+					"description": "URL"
+				}
+			}
+		}
+	},
+	"scripts": {
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "node ./node_modules/vscode/bin/test"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"eslint": "^5.13.0",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"__metadata": {
+		"id": "4a3717df-00d2-40dd-9ed5-cea39d4d6d04",
+		"publisherId": "096d9204-8dd5-45b0-9611-292ee7bafd04",
+		"publisherDisplayName": "",
+		"installedTimestamp": 1619096124034
+	}
+}
